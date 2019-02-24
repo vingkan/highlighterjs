@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highlighter</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
+    <script type="text/javascript" src="highlighter.min.js"></script>
+    <style type="text/css">
+        
+        .is-highlighted {
+            background: rgba(0, 0, 255, 0.25);
+            padding: 2.5px;
+        }
+
+        .is-tooltip {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container content">
+            <div id="text">
+                <h1>HackIllinois 2019</h1>
+                <p><em>Make Waves, <a target="_blank" href="http://www.paulgraham.com/makersschedule.html">Original Link</a></em></p>
+                <h2>Open Source</h2>
+                <p>HackIllinois is redefining the collegiate hackathon as the first entirely open source hackathon. Students work with experienced open source mentors over 36 hours to contribute to open source through new features, bug fixes, and documentation changes.</p>
+                <h2>The Event</h2>
+                <p>This year, only groups who work on an open source contribution and add a license will be eligible to win prizes. Contribute to a useful open source tool that you use, an open source project of your own, or join a team led by an open source mentor!</p>
+                <h2>Join Us</h2>
+                <p>Interested in contributing to open source? Be sure to apply for your chance to attend. Really want to come? Complete our Open Source Challenge for guaranteed admission to HackIllinois 2019. It’s simple—just make one PR to any project between December 1, 2018 and the close of applications. New to open source? No problem. Our workshops and mentors will help guide you through the intricacies of open source, from licensing to making your first PR (pull request).</p>
+                <div class="columns">
+                    <div class="column is-one-fourth">
+                        <h3>What</h3>
+                        <p>HackIllinois is a 36-hour event where college students from across the country work on open source projects, including new features, documentation, and bug fixes. You can work on contributing to a useful open source tool that you use, an open source project of your own, or joining a team led by an open source mentor.</p>
+                    </div>
+                    <div class="column is-one-fourth">
+                        <h3>Where</h3>
+                        <p>HackIllinois will occur in multiple buildings on the University of Illinois at Urbana-Champaign campus, primarily at the Siebel Center for Computer Science (201 N Goodwin Ave, Urbana, IL 61801) and Electrical & Computer Engineering Building (306 N Wright St, Urbana, IL 61801).</p>
+                    </div>
+                    <div class="column is-one-fourth">
+                        <h3>When</h3>
+                        <p>You should arrive before 8 pm on Friday, February 22 for an opening ceremony and other activities. The contribution period will begin at 11 pm and will last until 11 am on Sunday, February 24. A more detailed schedule is available on the Day Of site.</p>
+                    </div>
+                    <div class="column is-one-fourth">
+                        <h3>Who</h3>
+                        <p>All university and college students of all skill levels are eligible to attend. We welcome a diverse mix of colleges, disciplines, and interests at our event, and encourage students from outside the Champaign-Urbana area to attend. There will be workshops and support from mentors if you are new to open source.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+
+        const textEl = document.querySelector("#text");
+        const hl = Highlighter(textEl);
+        const defaultHighlights = [{"el":{},"start":121,"end":217,"text":"HackIllinois is redefining the collegiate hackathon as the first entirely open source hackathon.","timestamp":1551025899927}];
+        hl.renderHighlights(defaultHighlights);
+        textEl.querySelector(".is-highlighted").addEventListener("click", (e) => {
+            window.open(`https://twitter.com/home?status=${e.target.textContent}`);
+        });
+        hl.onHighlight((highlight) => {
+            console.log(highlight);
+            hl.renderHighlights(highlight);
+            window.open(`https://twitter.com/home?status=${highlight.text}`);
+        });
+
+    </script>
+</body>
+</html>
