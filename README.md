@@ -8,7 +8,18 @@ Highlighter.js is a vanilla JavaScript library that provides a simple API for hi
 - Crowdsource annotations and display them in context
 - Identify which parts of a text are most important to your users
 
-Highlighting works even on lines that span multiple nested DOM elements or multiple sibling elements.
+## Features
+
+Highlighter.js provides these important features:
+
+- Re-render annotations stored in JSON.
+- Highlighting works even on lines that span multiple nested DOM elements or multiple sibling elements.
+- Flexible callbacks for a variety of purposes, such as sharing quotations on [Twitter](https://vingkan.github.io/highlighterjs/social.html)
+
+Other related open source libraries include:
+
+- [anythingcodes/highlight-share](https://github.com/anythingcodes/highlight-share)
+- [720kb/highlighter.js](https://github.com/720kb/highlighter.js)
 
 ## Installation
 
