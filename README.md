@@ -1,6 +1,6 @@
 # Highlighter.js
 
-Easily extend any HTML page for user highlighting.
+Easily extend any HTML page for custom highlighting.
 
 Highlighter.js is a vanilla JavaScript library that provides a simple API for highlighting HTML pages. Developers can save the highlighted references as JSON and render them in the future. Save the highlights to:
 
